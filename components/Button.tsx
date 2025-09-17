@@ -1,8 +1,13 @@
-import { StyleProp, StyleSheet, ViewStyle, Pressable, Dimensions } from "react-native";
+import {
+  StyleProp,
+  StyleSheet,
+  ViewStyle,
+  Pressable,
+  Dimensions,
+} from "react-native";
 import React from "react";
 import Typo from "./Typo";
 import Loading from "./Loading";
-import { LinearGradient } from "expo-linear-gradient";
 
 interface ButtonProps {
   style?: StyleProp<ViewStyle>;
@@ -18,25 +23,15 @@ const Button = ({ style, onPress, loading = false, children }: ButtonProps) => {
     <Pressable
       onPress={onPress}
       disabled={loading}
-      style={({ pressed }) => [
-        { opacity: pressed ? 0.85 : 1 }, 
-        style,
-      ]}
+      style={[styles.button, style]}
     >
-      <LinearGradient
-        colors={["#5f33e1", "#7b4bff"]}
-        start={{ x: 0, y: 0 }}
-        end={{ x: 1, y: 0 }}
-        style={styles.button}
-      >
         {loading ? (
           <Loading />
         ) : (
-          <Typo size={16} fontWeight="700" color="#fff">
+          <Typo size={16} fontFamily="LexendDeca_700Bold" color="#fff">
             {children}
           </Typo>
         )}
-      </LinearGradient>
     </Pressable>
   );
 };
@@ -46,9 +41,8 @@ export default Button;
 const styles = StyleSheet.create({
   button: {
     height: 56,
-    width: width * 0.9,
     paddingHorizontal: width * 0.1,
-    borderRadius: 15, 
+    borderRadius: 20,
     borderCurve: "continuous",
     alignItems: "center",
     justifyContent: "center",

@@ -4,7 +4,7 @@ import React from 'react'
 interface TypoProps {
     size?: number;
     color?: string;
-    fontWeight?: "400" | "normal" | "bold" | "100" | "200" | "300" | "500" | "600" | "700" | "800" | "900" | "ultralight" | "thin" | "light" | "medium" | "semibold" | "black";
+    fontFamily?: "LexendDeca_400Regular" | "LexendDeca_500Medium" | "LexendDeca_700Bold" | "LexendDeca_600SemiBold";
     children: React.ReactNode;
     style?: TextStyle;
     textProps?: TextProps;
@@ -12,7 +12,7 @@ interface TypoProps {
 const Typo = ({
     size,
     color,
-    fontWeight,
+    fontFamily,
     children,
     style,
     textProps = {},
@@ -21,7 +21,7 @@ const Typo = ({
     const textStyle: TextStyle = {
         fontSize: size,
         color,
-        fontWeight       
+        fontFamily 
     }
   return (
     <Text style={[textStyle, style]} {...textProps}>
