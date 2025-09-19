@@ -144,7 +144,7 @@ const Home = () => {
                   >
                     Grocery shopping app design
                   </Typo>
-                  <ProgressBar progress={70} />
+                  <ProgressBar progress={70} color="#1E90FF" />
                 </View>
               </View>
 
@@ -173,7 +173,7 @@ const Home = () => {
                   >
                     Uber Eats redesign challenge
                   </Typo>
-                  <ProgressBar progress={40} />
+                  <ProgressBar progress={52} color="darkorange" />
                 </View>
               </View>
             </ScrollView>
@@ -199,7 +199,7 @@ const Home = () => {
                 <View style={styles.taskGroupHeader}>
                   <Image
                     source={require("../../assets/images/officeProject.png")}
-                    style={styles.taskGroupImage}
+                    style={styles.taskFirstImage}
                   />
                   <View style={styles.taskGroupHeaderText}>
                     <Typo
@@ -226,9 +226,9 @@ const Home = () => {
                   <Progress.Circle
                     size={60} // circle size
                     progress={0.7} // 0 to 1
-                    thickness={4.5} // ring width
-                    color="#5F33E1" // progress color
-                    unfilledColor="grey" // background ring
+                    thickness={4.7} // ring width
+                    color="#FF77B8" // progress color
+                    unfilledColor="#FFE5F0" // background ring
                     borderWidth={0} // remove border
                   />
                   <View style={styles.textPercentageWrapper}>
@@ -236,7 +236,48 @@ const Home = () => {
                   </View> 
                 </View>
               </View>
-            </ScrollView>
+              <View style={styles.taskGroup}>
+                <View style={styles.taskGroupHeader}>
+                  <Image
+                    source={require("../../assets/images/personal.png")}
+                    style={styles.taskSecondImage}
+                  />
+                  <View style={styles.taskGroupHeaderText}>
+                    <Typo
+                      style={{
+                        fontSize: 22,
+                        color: "black",
+                      }}
+                      fontFamily="LexendDeca_500Medium"
+                    >
+                      Personal Project
+                    </Typo>
+                    <Typo
+                      style={{
+                        fontSize: 18,
+                        color: "grey",
+                      }}
+                      fontFamily="LexendDeca_500Medium"
+                    >
+                      30 Tasks
+                    </Typo>
+                  </View>
+                </View>
+                <View style={styles.taskGroupProgressBar}>
+                  <Progress.Circle
+                    size={60} // circle size
+                    progress={0.52} // 0 to 1
+                    thickness={4.7} // ring width
+                    color="#5F33E1" // progress color
+                    unfilledColor="#E5E5E5" // background ring
+                    borderWidth={0} // remove border
+                  />
+                  <View style={styles.textPercentageWrapper}>
+                    <Typo style={styles.textPercentage}>52%</Typo>
+                  </View> 
+                </View>
+              </View>
+            </ScrollView> 
           </View>
         </View>
       </View>
@@ -411,9 +452,15 @@ const styles = StyleSheet.create({
     borderRadius: 15,
     marginBottom: 10,
   },
-  taskGroupImage: {
+  taskFirstImage: {
     width: 50,
     height: 50,
+  },
+  taskSecondImage: {
+    width: 40,
+    height: 40,
+    marginRight: 5,
+    marginLeft: 6,
   },
   taskGroupHeader: {
     flexDirection: "row",
@@ -444,5 +491,6 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: "600",
     color: "black",
+    fontFamily: "LexendDeca_500Medium",
   },
 });
