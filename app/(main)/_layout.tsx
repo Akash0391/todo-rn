@@ -1,6 +1,7 @@
 import { router, Tabs } from "expo-router";
-import { Image, View, TouchableOpacity, StyleSheet } from "react-native";
+import { Image, View, StyleSheet, TouchableOpacity } from "react-native";
 import { icons } from "@/constants/icons";
+import CustomTabBar from "@/components/CustomTabBar";
 
 interface TabBarIconProps {
   focused: boolean;
@@ -11,10 +12,7 @@ const TabBarIcon = ({ focused, icon }: TabBarIconProps) => (
   <View style={[styles.iconWrapper, focused && styles.focusedShadow]}>
     <Image
       source={icon}
-      style={[
-        styles.icon,
-        { tintColor:focused ? "#5F33E1" : "#826AC6" },
-      ]}
+      style={[styles.icon, { tintColor: focused ? "#5F33E1" : "#826AC6" }]}
       resizeMode="contain"
     />
   </View>
@@ -22,97 +20,98 @@ const TabBarIcon = ({ focused, icon }: TabBarIconProps) => (
 
 export default function TabsLayout() {
   return (
-    <Tabs
-      screenOptions={{
-        headerShown: false,
-        tabBarShowLabel: false,
-        tabBarStyle: styles.tabBar,
-      }}
+    <View style={styles.container}>
+      <Tabs
+        tabBar={(props) => <CustomTabBar {...props} />}
+        screenOptions={{
+          headerShown: false,
+          tabBarShowLabel: false,
+        }}
+      >
+        <Tabs.Screen
+          name="home"
+          options={{
+            tabBarIcon: ({ focused }) => (
+              <TabBarIcon focused={focused} icon={icons.home} />
+            ),
+          }}
+        />
+
+        <Tabs.Screen
+          name="calendar"
+          options={{
+            tabBarIcon: ({ focused }) => (
+              <TabBarIcon focused={focused} icon={icons.calendar} />
+            ),
+          }}
+        />
+
+        <Tabs.Screen name="empty" options={{ tabBarButton: () => null }} />
+
+        <Tabs.Screen
+          name="notes"
+          options={{
+            tabBarIcon: ({ focused }) => (
+              <TabBarIcon focused={focused} icon={icons.notes} />
+            ),
+          }}
+        />
+
+        <Tabs.Screen
+          name="profile"
+          options={{
+            tabBarIcon: ({ focused }) => (
+              <TabBarIcon focused={focused} icon={icons.profile} />
+            ),
+          }}
+        />
+      </Tabs>
+      <FloatingButton />
+    </View>
+  );
+}
+
+export function FloatingButton() {
+  return (
+    <TouchableOpacity
+      style={styles.fab}
+      onPress={() => router.push("/add")}
     >
-      <Tabs.Screen
-        name="home"
-        options={{
-          tabBarIcon: ({ focused }) => (
-            <TabBarIcon focused={focused} icon={icons.home} />
-          ),
-        }}
+      <Image
+        source={icons.plus}
+        style={{ width: 23, height: 23, tintColor: "white" }}
       />
-
-      <Tabs.Screen
-        name="calendar"
-        options={{
-          tabBarIcon: ({ focused }) => (
-            <TabBarIcon focused={focused} icon={icons.calendar} />  
-          ),
-        }}
-      />
-
-      {/* Floating Button */}
-      <Tabs.Screen
-        name="add"
-        options={{
-          tabBarButton: () => (
-            <TouchableOpacity style={styles.fab} onPress={() => router.push("/add")}>
-              <Image
-                source={icons.plus}
-                style={{ width: 23, height: 23, tintColor: "white" }}
-              />
-            </TouchableOpacity>
-          ),
-        }}
-      />
-
-      <Tabs.Screen
-        name="notes"
-        options={{
-          tabBarIcon: ({ focused }) => (
-            <TabBarIcon focused={focused} icon={icons.notes} />
-          ),
-        }}
-      />
-
-      <Tabs.Screen
-        name="profile"
-        options={{
-          tabBarIcon: ({ focused }) => (
-            <TabBarIcon focused={focused} icon={icons.profile} />
-          ),
-        }}
-      />
-    </Tabs>
+    </TouchableOpacity>
   );
 }
 
 const styles = StyleSheet.create({
-  tabBar: {
-    position: "absolute",
-    height: 75,
-    borderRadius: 30,
-    backgroundColor: "#f3ecfc",
+  container: {
+    flex: 1,
   },
   iconWrapper: {
-    marginTop: 30,
-    width: 30,
-    height: 30,
+    marginTop: 15,
+    width: 28,
+    height: 28,
     borderRadius: 25,
   },
   icon: {
-    width: 30,
-    height: 30,
+    width: 28,  
+    height: 28,
   },
   focusedShadow: {
     shadowColor: "#5F33E1",
     shadowOffset: { width: 0, height: 0 },
     shadowOpacity: 2,
     shadowRadius: 12,
-    elevation: 8, 
+    elevation: 8,
   },
   fab: {
     position: "absolute",
-    bottom: 20,
+    bottom: 35,
     alignSelf: "center",
-    width: 70,
-    height: 70,
+    width: 65,
+    height: 65,
     borderRadius: 35,
     backgroundColor: "#5F33E1",
     alignItems: "center",
