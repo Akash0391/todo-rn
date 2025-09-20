@@ -24,7 +24,7 @@ const Calender = () => {
           </TouchableOpacity>
 
           <Typo
-            style={{ fontSize: 30 }}
+            style={{ fontSize: 24 }}
             fontFamily="LexendDeca_700Bold"
             color={"#000"}
           >
@@ -43,14 +43,14 @@ const Calender = () => {
         <View style={styles.dates}>
           <View style={styles.datesContainer}>
             <Typo style={styles.datesText}>May</Typo>
-            <Typo style={{ fontSize: 30, fontFamily: "LexendDeca_700Bold" }}>
+            <Typo style={{ fontSize: 26, fontFamily: "LexendDeca_700Bold" }}>
               23
             </Typo>
             <Typo style={styles.datesText}>Fri</Typo>
           </View>
           <View style={styles.datesContainer}>
             <Typo style={styles.datesText}>May</Typo>
-            <Typo style={{ fontSize: 30, fontFamily: "LexendDeca_700Bold" }}>
+            <Typo style={{ fontSize: 26, fontFamily: "LexendDeca_700Bold" }}>
               24
             </Typo>
             <Typo style={styles.datesText}>Sat</Typo>
@@ -60,7 +60,7 @@ const Calender = () => {
               May
             </Typo>
             <Typo
-              style={{ fontSize: 30, fontFamily: "LexendDeca_700Bold" }}
+              style={{ fontSize: 26, fontFamily: "LexendDeca_700Bold" }}
               color="white"
             >
               25
@@ -71,14 +71,14 @@ const Calender = () => {
           </View>
           <View style={styles.datesContainer}>
             <Typo style={styles.datesText}>May</Typo>
-            <Typo style={{ fontSize: 30, fontFamily: "LexendDeca_700Bold" }}>
+            <Typo style={{ fontSize: 26, fontFamily: "LexendDeca_700Bold" }}>
               26
             </Typo>
             <Typo style={styles.datesText}>Mon</Typo>
           </View>
           <View style={styles.datesContainer}>
             <Typo style={styles.datesText}>May</Typo>
-            <Typo style={{ fontSize: 30, fontFamily: "LexendDeca_700Bold" }}>
+            <Typo style={{ fontSize: 26, fontFamily: "LexendDeca_700Bold" }}>
               27
             </Typo>
             <Typo style={styles.datesText}>Tue</Typo>
@@ -122,104 +122,232 @@ const Calender = () => {
         <View style={styles.tasksContainer}>
           <View style={styles.tasksItem}>
             <View style={styles.tasks}>
-              <View style={styles.rightSide}>
-                <Typo style={styles.upperTasksText}>
+              <View style={styles.upperTasksText}>
+                <Typo
+                  style={{
+                    fontSize: 16,
+                    fontFamily: "LexendDeca_400Regular",
+                    color: "grey",
+                  }}
+                >
                   Grocery shopping app design
                 </Typo>
-                <Typo style={styles.middleTasksText}>Market Research</Typo>
+                <Image
+                  source={require("../../assets/images/officeProject.png")}
+                  style={styles.officeImage}
+                />
+              </View>
+              <View style={styles.middleTasksText}>
+                <Typo
+                  style={{
+                    fontSize: 20,
+                    fontFamily: "LexendDeca_600SemiBold",
+                    color: "#000",
+                  }}
+                >
+                  Market Research
+                </Typo>
+              </View>
+              <View style={styles.lowerTasksText}>
                 <View style={styles.timeContainer}>
                   <Image
                     source={require("../../assets/images/time.png")}
                     style={styles.timeImage}
                   />
-                  <Typo style={styles.lowerTasksText}>10:00 AM</Typo>
+                  <Typo
+                    style={{
+                      fontSize: 14,
+                      fontFamily: "LexendDeca_400Regular",
+                      color: "#9B7DF5",
+                    }}
+                  >
+                    10:00 AM
+                  </Typo>
                 </View>
-              </View>
-              <View style={styles.leftSide}>
-                <Image
-                  source={require("../../assets/images/officeProject.png")}
-                  style={styles.officeImage}
-                />
-                <View style={styles.tasksUpdateContainer}>
-                  <Typo style={styles.tasksUpdateText}>Done</Typo>
+                <View style={styles.tasksUpdateContainerDone}>
+                  <Typo
+                    style={{
+                      fontSize: 14,
+                      fontFamily: "LexendDeca_400Regular",
+                      color: "#9B7DF5",
+                    }}
+                  >
+                    Done
+                  </Typo>
                 </View>
               </View>
             </View>
           </View>
           <View style={styles.tasksItem}>
             <View style={styles.tasks}>
-              <View style={styles.rightSide}>
-                <Typo style={styles.upperTasksText}>
+              <View style={styles.upperTasksText}>
+                <Typo
+                  style={{
+                    fontSize: 16,
+                    fontFamily: "LexendDeca_400Regular",
+                    color: "grey",
+                  }}
+                >
                   Grocery shopping app design
                 </Typo>
-                <Typo style={styles.middleTasksText}>Competitive Analysis</Typo>
-                <View style={styles.timeContainer}>
-                  <Image
-                    source={require("../../assets/images/time.png")}
-                    style={styles.timeImage}
-                  />
-                  <Typo style={styles.lowerTasksText}>12:00 PM</Typo>
-                </View>
-              </View>
-              <View style={styles.leftSide}>
                 <Image
                   source={require("../../assets/images/officeProject.png")}
                   style={styles.officeImage}
                 />
-                <View style={styles.tasksUpdateContainer}>
-                  <Typo style={styles.tasksUpdateText}>In Progress</Typo>
-                </View>
               </View>
-            </View>
-          </View>
-          <View style={styles.tasksItem}>
-            <View style={styles.tasks}>
-              <View style={styles.rightSide}>
-                <Typo style={styles.upperTasksText}>
-                Uber Eats redisgn challenge
+              <View style={styles.middleTasksText}>
+                <Typo
+                  style={{
+                    fontSize: 20,
+                    fontFamily: "LexendDeca_600SemiBold",
+                    color: "#000",
+                  }}
+                >
+                  Competitive Analysis
                 </Typo>
-                <Typo style={styles.middleTasksText}>Create Low-Fidelity Wireframes</Typo>
+              </View>
+              <View style={styles.lowerTasksText}>
                 <View style={styles.timeContainer}>
                   <Image
                     source={require("../../assets/images/time.png")}
                     style={styles.timeImage}
                   />
-                  <Typo style={styles.lowerTasksText}>07:00 PM</Typo>
+                  <Typo
+                    style={{
+                      fontSize: 14,
+                      fontFamily: "LexendDeca_400Regular",
+                      color: "#9B7DF5",
+                    }}
+                  >
+                    12:00 PM
+                  </Typo>
                 </View>
-              </View>
-              <View style={styles.leftSide}>
-                <Image
-                  source={require("../../assets/images/officeProject.png")}
-                  style={styles.officeImage}
-                />
-                <View style={styles.tasksUpdateContainer}>
-                  <Typo style={styles.tasksUpdateText}>TO DO</Typo>
+                <View style={styles.tasksUpdateContainerInProgress}>
+                  <Typo
+                    style={{
+                      fontSize: 14,
+                      fontFamily: "LexendDeca_400Regular",
+                      color: "#FFA500",
+                    }}
+                  >
+                    In Progress
+                  </Typo>
                 </View>
               </View>
             </View>
           </View>
           <View style={styles.tasksItem}>
             <View style={styles.tasks}>
-              <View style={styles.rightSide}>
-                <Typo style={styles.upperTasksText}>
+              <View style={styles.upperTasksText}>
+                <Typo
+                  style={{
+                    fontSize: 16,
+                    fontFamily: "LexendDeca_400Regular",
+                    color: "grey",
+                  }}
+                >
+                  Uber Eats redesign challenge
+                </Typo>
+                <Image
+                  source={require("../../assets/images/personal.png")}
+                  style={styles.personImage}
+                />
+              </View>
+              <View style={styles.middleTasksText}>
+                <Typo
+                  style={{
+                    fontSize: 20,
+                    fontFamily: "LexendDeca_600SemiBold",
+                    color: "#000",
+                  }}
+                >
+                  Create Low-fidelity Wireframe
+                </Typo>
+              </View>
+              <View style={styles.lowerTasksText}>
+                <View style={styles.timeContainer}>
+                  <Image
+                    source={require("../../assets/images/time.png")}
+                    style={styles.timeImage}
+                  />
+                  <Typo
+                    style={{
+                      fontSize: 14,
+                      fontFamily: "LexendDeca_400Regular",
+                      color: "#9B7DF5",
+                    }}
+                  >
+                    07:00 PM
+                  </Typo>
+                </View>
+                <View style={styles.tasksUpdateContainerToDo}>
+                  <Typo
+                    style={{
+                      fontSize: 14,
+                      fontFamily: "LexendDeca_400Regular",
+                      color: "#007BFF",
+                    }}
+                  >
+                    TO DO
+                  </Typo>
+                </View>
+              </View>
+            </View>
+          </View>
+          <View style={styles.tasksItem}>
+            <View style={styles.tasks}>
+              <View style={styles.upperTasksText}>
+                <Typo
+                  style={{
+                    fontSize: 16,
+                    fontFamily: "LexendDeca_400Regular",
+                    color: "grey",
+                  }}
+                >
                   About design sprint
                 </Typo>
-                <Typo style={styles.middleTasksText}>How to pitch a Design Sprint</Typo>
+                <Image
+                  source={require("../../assets/images/book.png")}
+                  style={styles.bookImage}
+                />
+              </View>
+              <View style={styles.middleTasksText}>
+                <Typo
+                  style={{
+                    fontSize: 20,
+                    fontFamily: "LexendDeca_600SemiBold",
+                    color: "#000",
+                  }}
+                >
+                  How to pitch a Design Sprint
+                </Typo>
+              </View>
+              <View style={styles.lowerTasksText}>
                 <View style={styles.timeContainer}>
                   <Image
                     source={require("../../assets/images/time.png")}
                     style={styles.timeImage}
                   />
-                  <Typo style={styles.lowerTasksText}>09:00 PM</Typo>
+                  <Typo
+                    style={{
+                      fontSize: 14,
+                      fontFamily: "LexendDeca_400Regular",
+                      color: "#9B7DF5",
+                    }}
+                  >
+                    09:00 PM
+                  </Typo>
                 </View>
-              </View>
-              <View style={styles.leftSide}>
-                <Image
-                  source={require("../../assets/images/officeProject.png")}
-                  style={styles.officeImage}
-                />
-                <View style={styles.tasksUpdateContainer}>
-                  <Typo style={styles.tasksUpdateText}>TO DO</Typo>
+                <View style={styles.tasksUpdateContainerToDo}>
+                  <Typo
+                    style={{
+                      fontSize: 14,
+                      fontFamily: "LexendDeca_400Regular",
+                      color: "#007BFF",
+                    }}
+                  >
+                    TO DO
+                  </Typo>
                 </View>
               </View>
             </View>
@@ -275,7 +403,7 @@ const styles = StyleSheet.create({
     gap: 5,
   },
   datesContainer: {
-    paddingHorizontal: 24,
+    paddingHorizontal: 22,
     paddingVertical: 10,
     backgroundColor: "white",
     borderRadius: 18,
@@ -290,7 +418,7 @@ const styles = StyleSheet.create({
     elevation: 5,
   },
   datesText: {
-    fontSize: 18,
+    fontSize: 16,
     fontFamily: "LexendDeca_400Regular",
   },
   datesContainerActive: {
@@ -305,7 +433,7 @@ const styles = StyleSheet.create({
     gap: 10,
   },
   categoriesText: {
-    fontSize: 19,
+    fontSize: 18,
     fontFamily: "LexendDeca_500Medium",
   },
   categoriesItem: {
@@ -323,7 +451,7 @@ const styles = StyleSheet.create({
   },
   tasksContainer: {
     flexDirection: "column",
-    gap: 20,    
+    gap: 20,
     marginTop: 30,
     paddingHorizontal: 20,
   },
@@ -332,11 +460,11 @@ const styles = StyleSheet.create({
   },
   tasks: {
     flex: 1,
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
-    paddingVertical: 20,
-    paddingHorizontal: 22,
+    flexDirection: "column",
+    paddingVertical: 15,
+    paddingLeft: 22,
+    paddingRight: 15,
+    gap: 2,
     backgroundColor: "white",
     borderRadius: 20,
     shadowColor: "#000",
@@ -345,57 +473,57 @@ const styles = StyleSheet.create({
     shadowRadius: 3.84,
     elevation: 5,
   },
-  rightSide: {
-    flexDirection: "column",
-    justifyContent: "space-between",
-    gap: 8,
-  },
-  leftSide: {
-    flexDirection: "column",
-    justifyContent: "space-around",
-    alignItems: "center",
-    gap: 15,
-  },
   upperTasksText: {
-    fontSize: 16,
-    fontFamily: "LexendDeca_500Medium",
-    color: "gray",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
   },
-  middleTasksText: {
-    fontSize: 20,
-    fontFamily: "LexendDeca_600SemiBold",
-    color: "black",
+  officeImage: {
+    width: 40,
+    height: 30,
   },
+  middleTasksText: {},
   lowerTasksText: {
-    fontSize: 14,
-    fontFamily: "LexendDeca_400Regular",
-    color: "#9B7DF5",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    marginTop: 5,
   },
   timeContainer: {
     flexDirection: "row",
     alignItems: "center",
-    gap: 8,
+    gap: 10,
   },
   timeImage: {
-    color: "#9B7DF5",
-    width: 16,
-    height: 16,
+    width: 15,
+    height: 15,
   },
-  officeImage: {
-    width: 50,
-    height: 50,
-  },
-  tasksUpdateContainer: {
-    justifyContent: "center",
-    alignItems: "center",
-    paddingHorizontal: 13,
-    paddingVertical: 2,
-    borderRadius: 10,
+  tasksUpdateContainerDone: {
     backgroundColor: "#f3ecfc",
+    paddingHorizontal: 15,
+    paddingVertical: 5,
+    borderRadius: 20,
   },
-  tasksUpdateText: {
-    fontSize: 14,
-    fontFamily: "LexendDeca_500Medium",
-    color: "#5F33E1",
+  tasksUpdateContainerInProgress: {
+    backgroundColor: "#FFEACC",
+    paddingHorizontal: 15,
+    paddingVertical: 5,
+    borderRadius: 20,
+  },
+  tasksUpdateContainerToDo: {
+    backgroundColor: "#CCE4FF",
+    paddingHorizontal: 15,
+    paddingVertical: 5,
+    borderRadius: 20,
+  },
+  bookImage: {
+    marginRight: 5,
+    width: 30,
+    height: 30,
+  },
+  personImage: {
+    marginRight: 5,
+    width: 30,
+    height: 30,
   },
 });
